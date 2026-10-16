@@ -3,69 +3,101 @@ import linkLogo from "../../../assets/images/icon-link.svg";
 import LinkContext from "../../../context/LinkContext";
 import { useContext, useState, useEffect } from "react";
 
-const LinkInput = ( {id, platform, platformLogo} ) => {
+const LinkInput = ({ id, platform, platformLogo }) => {
     const [input, setInput] = useState("");
     const [error, setError] = useState(false);
     const [errorText, setErrorText] = useState("");
-    const { buttonPressed, setButtonPressed, updateList, listArray } = useContext(LinkContext);
-    const [placeholder, setPlaceholder] = useState("e.g. https://gitbhub.com/user")
-    const [regExpression, setRegExpression] = useState("")
+    const {
+        buttonPressed,
+        setButtonPressed,
+        updateList,
+        listArray
+    } = useContext(LinkContext);
+
+    const [placeholder, setPlaceholder] = useState("e.g. https://github.com/user");
+    const [regExpression, setRegExpression] = useState(null);
 
     const handleChange = (event) => {
         setInput(event.target.value);
         setButtonPressed(false);
+        setError(false);
+        setErrorText("");
     };
 
     useEffect(() => {
-        listArray.forEach((object) => {
-            if(platform === object.title) {
-                setRegExpression(object.regEx)
-            }
-        })
-    }, [platform, listArray])
+        const selectedPlatform = listArray.find(
+            (object) => platform === object.title
+        );
 
-    useEffect(() => {
-        listArray.forEach((object) => {
-            if(platform === object.title) {
-                setPlaceholder(`e.g . ${object.link}user`)
-            }
-        })
-    })
-
-    useEffect(() => {
-        if(buttonPressed) {
-            if(input === "") {
-                setError(true)
-                setErrorText("Can’t be empty")
-            } else if(!regExpression.test(input)) {
-                setError(true)
-                setErrorText("Please check the URL")
-            } else {
-                setError(false);
-                updateList(id, input, platform, platformLogo)
-            }
-            
+        if (selectedPlatform) {
+            setRegExpression(() => selectedPlatform.regEx);
         }
-    }, [buttonPressed, input, id, platform, platformLogo, regExpression])
+    }, [platform, listArray]);
+
+    useEffect(() => {
+        const selectedPlatform = listArray.find(
+            (object) => platform === object.title
+        );
+
+        if (selectedPlatform) {
+            setPlaceholder(`e.g. ${selectedPlatform.link}user`);
+        }
+    }, [platform, listArray]);
+
+    useEffect(() => {
+        if (!buttonPressed) {
+            return;
+        }
+
+        if (input.trim() === "") {
+            setError(true);
+            setErrorText("Can’t be empty");
+            return;
+        }
+
+        if (!regExpression || !regExpression.test(input)) {
+            setError(true);
+            setErrorText("Please check the URL");
+            return;
+        }
+
+        setError(false);
+        setErrorText("");
+        updateList(id, input, platform, platformLogo);
+    }, [
+        buttonPressed,
+        input,
+        id,
+        platform,
+        platformLogo,
+        regExpression,
+        updateList
+    ]);
 
     return (
-            <StyledLinkInput>
-                <label className="link--label" htmlFor="link">Link</label>
-                {error && <p className="error--text">{errorText}</p>}
-                <input 
-                    type="text" 
-                    id="link" 
-                    placeholder={placeholder}
-                    spellCheck="false" 
-                    onChange={handleChange}
-                    className={`${error ? "error" : ""}`}
-                />
-                <img src={linkLogo} alt="link Logo"/>
-            </StyledLinkInput>
-    )
-}
+        <StyledLinkInput>
+            <label className="link--label" htmlFor="link">
+                Link
+            </label>
 
-export default LinkInput
+            {error && <p className="error--text">{errorText}</p>}
+
+            <input
+                type="text"
+                id="link"
+                placeholder={placeholder}
+                spellCheck="false"
+                value={input}
+                onChange={handleChange}
+                className={`${error ? "error" : ""}`}
+            />
+
+            <img src={linkLogo} alt="link Logo" />
+        </StyledLinkInput>
+    );
+};
+
+export default LinkInput;
 
 const StyledLinkInput = styled.form`
     margin-top: 15px;
@@ -94,12 +126,12 @@ const StyledLinkInput = styled.form`
     }
 
     input:hover {
-            cursor: pointer;
-        }
+        cursor: pointer;
+    }
 
     input:focus {
         border: 1px solid var(--purple, #633CFF);
-        box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25)
+        box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
     }
 
     img {
@@ -129,27 +161,23 @@ const StyledLinkInput = styled.form`
         border: 1px solid var(--red, #FF3939);
     }
 
-     @media (min-width: 772px) {
+    @media (min-width: 772px) {
+        input::placeholder {
+            font-size: 16px;
+        }
 
-    input::placeholder {
-        font-size: 16px;
+        .error--text {
+            color: var(--red, #FF3939);
+            text-align: right;
+            font-family: Instrument Sans;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            position: absolute;
+            z-index: 50;
+            right: 15px;
+            top: 55px;
+        }
     }
-
-    .error--text {
-        color: var(--red, #FF3939);
-        text-align: right;
-        font-family: Instrument Sans;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%;
-        position: absolute;
-        z-index: 50;
-        right: 15px;
-        top: 55px;
-    }
-    
-    }
-
-    
-`
+`;
