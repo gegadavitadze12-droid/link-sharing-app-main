@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/Link-Sharing-App/static/css/main.0be07306.css",
+    "main.js": "/Link-Sharing-App/static/js/main.34904864.js",
+    "static/media/icon-codewars.svg": "/Link-Sharing-App/static/media/icon-codewars.3c9f5f77fb4ac9fdf2810aaab823bfd0.svg",
+    "static/media/logo-devlinks-large.svg": "/Link-Sharing-App/static/media/logo-devlinks-large.52c487075bce824784b68a5e7c36a844.svg",
+    "static/media/illustration-empty.svg": "/Link-Sharing-App/static/media/illustration-empty.91038f5445072aeed78f4af1f56c15ee.svg",
+    "static/media/icon-freecodecamp.svg": "/Link-Sharing-App/static/media/icon-freecodecamp.fe39d63ff754be910741d59da946b158.svg",
+    "static/media/icon-github.svg": "/Link-Sharing-App/static/media/icon-github.7a8fea336a017d41af63d707a2c669ff.svg",
+    "static/media/illustration-phone-mockup.svg": "/Link-Sharing-App/static/media/illustration-phone-mockup.bee7893d226304c1a18479fc7b23f522.svg",
+    "static/media/icon-frontend-mentor.svg": "/Link-Sharing-App/static/media/icon-frontend-mentor.35ed0362b1a94087a331b2a12bf93a84.svg",
+    "static/media/icon-devto.svg": "/Link-Sharing-App/static/media/icon-devto.b4ec47814e47f329351a93290babc5e2.svg",
+    "static/media/icon-preview-header.svg": "/Link-Sharing-App/static/media/icon-preview-header.52a2142d4647de4d2c6b0ad28e8fce21.svg",
+    "index.html": "/Link-Sharing-App/index.html",
+    "static/media/icon-twitter.svg": "/Link-Sharing-App/static/media/icon-twitter.aec89ebeeef2d230c105295329cebf96.svg",
+    "static/media/logo-devlinks-small.svg": "/Link-Sharing-App/static/media/logo-devlinks-small.2d7e4b0a445ebdd2fcae772a7dd75eff.svg",
+    "static/media/icon-youtube.svg": "/Link-Sharing-App/static/media/icon-youtube.81b6703af7551c0955005409a4f5eb26.svg",
+    "static/media/icon-links-header.svg": "/Link-Sharing-App/static/media/icon-links-header.181edb431e6074a026156a3b94599f24.svg",
+    "static/media/icon-link-copied-to-clipboard.svg": "/Link-Sharing-App/static/media/icon-link-copied-to-clipboard.cc1fba4ac073a3af13ad7796a99fc59f.svg",
+    "static/media/icon-link.svg": "/Link-Sharing-App/static/media/icon-link.4861ebd53079c4986aaf6db78a0e5177.svg",
+    "static/media/icon-codepen.svg": "/Link-Sharing-App/static/media/icon-codepen.5eb2af1f37345f5dff7cbc595d2e1538.svg",
+    "static/media/icon-stack-overflow.svg": "/Link-Sharing-App/static/media/icon-stack-overflow.e26b54087a5e527160a845b5f8b73cf9.svg",
+    "static/media/icon-upload-image.svg": "/Link-Sharing-App/static/media/icon-upload-image.5c9d705305bbcc20b0da0380fcdccb4d.svg",
+    "static/media/icon-facebook.svg": "/Link-Sharing-App/static/media/icon-facebook.e2be3d11ffc50c242cf08c8eac382604.svg",
+    "static/media/icon-linkedin.svg": "/Link-Sharing-App/static/media/icon-linkedin.4503faaf69535fd93c5831b1dbf77cea.svg",
+    "static/media/icon-gitlab.svg": "/Link-Sharing-App/static/media/icon-gitlab.d49771272bd96b804c9f8cdf68b8ee62.svg",
+    "static/media/icon-profile-details-header.svg": "/Link-Sharing-App/static/media/icon-profile-details-header.1cb7b59dcccbac30b0c65425697c4ea4.svg",
+    "static/media/icon-twitch.svg": "/Link-Sharing-App/static/media/icon-twitch.0ea171acbdb4c5e727eb12ce8afc8415.svg",
+    "static/media/icon-email.svg": "/Link-Sharing-App/static/media/icon-email.61dd0d9ebaadd877212feb9267ecc7bf.svg",
+    "static/media/icon-arrow-right.svg": "/Link-Sharing-App/static/media/icon-arrow-right.21bc7dd4ec89a712e1e32835433f9e69.svg",
+    "static/media/icon-chevron-down.svg": "/Link-Sharing-App/static/media/icon-chevron-down.022f099cc2013e00f81adcbd0eef4484.svg",
+    "static/media/icon-drag-and-drop.svg": "/Link-Sharing-App/static/media/icon-drag-and-drop.1de0678de86a4fe2f3c53111f3d73dda.svg",
+    "main.0be07306.css.map": "/Link-Sharing-App/static/css/main.0be07306.css.map",
+    "main.34904864.js.map": "/Link-Sharing-App/static/js/main.34904864.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0be07306.css",
+    "static/js/main.34904864.js"
+  ]
+}
